@@ -2,14 +2,19 @@
 
 # Gerben Timmerman en Stan Snijders
 
+from PyQt4 import QtCore, QtGui
+from flag_color import *
 
 class Country():
+	
 	def __init__(self,country):
 		self.country = country
 				
 	def __str__(self):
-		countrynaam = ('Hello from {0}'.format(self.country))
-		return countrynaam
+		countrynaam = self.country
+		
+	def flagcolor(self):
+		
 		
 def countryread():
 	
@@ -22,8 +27,8 @@ def countryread():
 def main():
 	lijstlanden = countryread()
 	for landen in lijstlanden:
-		groet = Country(landen)
-		print(groet)
+		result = Country(landen)
+		print(result)
 		
 if __name__ == '__main__':
 	main()
