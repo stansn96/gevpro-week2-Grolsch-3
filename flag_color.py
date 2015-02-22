@@ -5,6 +5,7 @@
 
 from PyQt4 import QtCore, QtGui
 from random import randrange
+import sys
 
 class FlagColor(QtGui.QColor):
 	"""Class waarin de kleur wordt bepaald """

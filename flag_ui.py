@@ -16,7 +16,7 @@ class ColorFlag(QtGui.QWidget):
 		""" Constructor """
 		super(ColorFlag, self).__init__()
 		self.initUI()
-	
+		self.countrylijst = getCountrylist()
 		
 	def initUI(self):
 		""" User Interface """
@@ -37,14 +37,10 @@ class ColorFlag(QtGui.QWidget):
 		# Landen Comboboxen tekenen in venster
 		self.comboboxland = QtGui.QComboBox(self)
 		self.comboboxland.setGeometry(55,30,250,40)
-		self.comboboxland.show()
-		
-		
+			
 		# Ieder land toevoegen aan combobox
-		
-		self.countrylijst = country.main()
-		for thisCountry in self.countrylijst:
-			self.comboboxland.addItem(thisCountry.landen)
+		for countries in self.countrylijst:
+			self.comboboxland.addItem(countries.landen)
 		self.comboboxland.currentIndexChanged.connect(self.updateUI)
 		
 		# QFrame waar de kleur in staat
@@ -52,21 +48,18 @@ class ColorFlag(QtGui.QWidget):
 		self.frame.setGeometry(85,80,250,40)
 		self.kleurobject = QtGui.QColor(0,0,0)
 		self.frame.setStyleSheet("QFrame {background-color: %s}" % self.kleurobject.name())
-		self.frame.show()
+		self.show()
 		
 		
 	def updateUI(self):
 		""" Kleur van flag aanpassen """
-		self.kleurobject = flag_color.FlagColor.Kleur(self)
-		self.kleurobject = QtGui.QColor(self.kleurobject)
-		self.frame.setStyleSheet("QFrame {background-color: %s}" % self.kleurobject.name())
-		self.frame.show
+		nieuwland = self.comboboxland.currentText()
+		for land in self.countrylijst:
+			if (land.country == newCountry):
+				self.frame.setStyleSheet("QFrame { background-color: %s }" % land.color.name())
 		
-		
-def main():
+
+if __name__ == '__main__':
 	app = QtGui.QApplication(sys.argv)
 	flag = ColorFlag()
 	sys.exit(app.exec_())
-
-if __name__ == '__main__':
-	main()

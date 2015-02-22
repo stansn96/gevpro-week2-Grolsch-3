@@ -19,7 +19,7 @@ class Country():
 	def __str__(self):
 		return self
 		
-def main():
+def getCountrylist():
 	
 	countrylijst = []
 	bestand = open("countries_list.txt","r")
