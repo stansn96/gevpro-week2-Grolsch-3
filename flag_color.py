@@ -19,13 +19,8 @@ class FlagColor(QtGui.QColor):
 		
 	def Kleur(self):
 		self.setGreen(randrange(256))
-<<<<<<< HEAD
 		self.setRed(randrange(256))
 		self.setBlue(randrange(256))
-=======
-		self.setRed(randrange(256)
-		self.setBlue(randrange(256)
->>>>>>> 03d633d20f3be8143921222f5cf9908053dfba68
 		
 		return self
 
