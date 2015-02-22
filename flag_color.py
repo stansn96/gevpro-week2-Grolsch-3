@@ -1,17 +1,10 @@
 #!/usr/bin/python3
 
-<<<<<<< HEAD
-# Gerben Timmerman
-# flag_color.py
-
-from PyQt4 import QtCore, QtGui
-from random import randrange
-=======
 # Gerben Timmerman en Stan Snijders
 # flag_color.py
 
 from PyQt4 import QtCore, QtGui
->>>>>>> 25dbb6922f7f2c0da58e7e4a61ccf52eb44e0ca1
+from random import randrange
 
 class FlagColor(QtGui.QColor):
 	"""Class waarin de kleur wordt bepaald """
