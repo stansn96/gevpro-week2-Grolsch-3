@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# Gerben Timmerman
+# Gerben Timmerman en Stan Snijders
 
 
 class Country():
@@ -11,13 +11,16 @@ class Country():
 		countrynaam = ('Hello from {0}'.format(self.country))
 		return countrynaam
 		
-
+def countryread():
+	
+	countrylijst = []
+	bestand = open("countries_list.txt","r")
+	for line in bestand:
+		countrylijst.append(line)
+	return countrylijst
 
 def main():
-	lijstlanden = []
-	ob1, ob2 = "The Netherlands", "Germany"
-	lijstlanden.append(ob1)
-	lijstlanden.append(ob2)
+	lijstlanden = countryread()
 	for landen in lijstlanden:
 		groet = Country(landen)
 		print(groet)
