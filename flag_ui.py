@@ -5,6 +5,7 @@
 
 from PyQt4 import QtCore, QtGui
 from country import *
+from flag_color import *
 import sys
 
 class ColorFlag(QtGui.QWidget):
@@ -35,28 +36,31 @@ class ColorFlag(QtGui.QWidget):
 		
 		# Landen Comboboxen tekenen in venster
 		self.comboboxland = QtGui.QComboBox(self)
-		self.comboboxland.setGeometry(55,30,250,30)
+		self.comboboxland.setGeometry(55,30,250,40)
 		self.comboboxland.show()
 		
 		
 		# Ieder land toevoegen aan combobox
-		landen = countryread()
-		self.comboboxland.addItems(landen)
 		
+		self.countrylijst = country.main()
+		for thisCountry in self.countrylijst:
+			self.comboboxland.addItem(thisCountry.landen)
+		self.comboboxland.currentIndexChanged.connect(self.updateUI)
 		
 		# QFrame waar de kleur in staat
 		self.frame = QtGui.QFrame(self)
+		self.frame.setGeometry(85,80,250,40)
 		self.kleurobject = QtGui.QColor(0,0,0)
 		self.frame.setStyleSheet("QFrame {background-color: %s}" % self.kleurobject.name())
+		self.frame.show()
 		
-		
-		#Het aanpassen van de Boxen roep functie updateUI aan
-		self.comboboxland.currentIndexChanged.connect(self.updateUI)
 		
 	def updateUI(self):
 		""" Kleur van flag aanpassen """
-		self.kleurobject = flag_color.FlagColor.Kleur(self.kleurobject)
+		self.kleurobject = flag_color.FlagColor.Kleur(self)
+		self.kleurobject = QtGui.QColor(self.kleurobject)
 		self.frame.setStyleSheet("QFrame {background-color: %s}" % self.kleurobject.name())
+		self.frame.show
 		
 		
 def main():
