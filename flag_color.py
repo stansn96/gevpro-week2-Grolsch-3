@@ -11,7 +11,6 @@ class FlagColor(QtGui.QColor):
 	def __init__(self, land):
 		""" Constructor """
 		super(FlagColor, self).__init__()
-		self.kleur()
 		
 	def initUI(self):
 		self.land = land

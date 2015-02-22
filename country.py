@@ -7,14 +7,17 @@ from flag_color import *
 
 class Country():
 	
-	def __init__(self,country):
+	def __init__(self,country,vlag):
 		self.country = country
 				
-	def __str__(self):
+	def name(self):
 		countrynaam = self.country
 		
 	def flagcolor(self):
+		self.vlag = vlag
 		
+	def __str__(self):
+		return self
 		
 def countryread():
 	
@@ -27,7 +30,8 @@ def countryread():
 def main():
 	lijstlanden = countryread()
 	for landen in lijstlanden:
-		result = Country(landen)
+		flagcolor = FlagColor(landen)
+		result = Country(landen, flagcolor)
 		print(result)
 		
 if __name__ == '__main__':
