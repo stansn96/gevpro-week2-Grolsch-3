@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 # flag_ui.py
-# Gerben Timmerman
+# Gerben Timmerman & Stan Snijders
 
 from PyQt4 import QtCore, QtGui
 from country import *
@@ -22,10 +22,9 @@ class ColorFlag(QtGui.QWidget):
 		
 		# Plaats en groote van venster
 		self.setGeometry(300,300,600,150)
-		self.setWindowTitle('Valuta converter')
+		self.setWindowTitle('Vlag bepaler')
 		self.show()
 		
-		# Labels die van, naar weerwegen in het venster
 		label1 = QtGui.QLabel("Land:", self)
 		label1.move(10,30)
 		label1.show()
@@ -34,7 +33,7 @@ class ColorFlag(QtGui.QWidget):
 		label2.move(10,90)
 		label2.show()
 		
-		# Valuta Comboboxen tekenen in venster
+		# Landen Comboboxen tekenen in venster
 		self.comboboxland = QtGui.QComboBox(self)
 		self.comboboxland.setGeometry(55,30,250,30)
 		self.comboboxland.show()

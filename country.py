@@ -32,7 +32,6 @@ def main():
 	for landen in lijstlanden:
 		flagcolor = FlagColor(landen)
 		result = Country(landen, flagcolor)
-		print(result)
 		
 if __name__ == '__main__':
 	main()
