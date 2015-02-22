@@ -19,14 +19,16 @@ class Country():
 	def __str__(self):
 		return self
 		
-def countryread():
+def main():
 	
 	countrylijst = []
 	bestand = open("countries_list.txt","r")
 	for line in bestand:
+		landen = line.strip()
 		flagcolor = FlagColor(landen)
 		result = Country(landen, flagcolor)
 		countrylijst.append(result)
+	return countrylijst
 
 		
 if __name__ == '__main__':
