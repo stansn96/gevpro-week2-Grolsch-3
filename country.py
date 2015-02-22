@@ -24,14 +24,10 @@ def countryread():
 	countrylijst = []
 	bestand = open("countries_list.txt","r")
 	for line in bestand:
-		countrylijst.append(line)
-	return countrylijst
-
-def main():
-	lijstlanden = countryread()
-	for landen in lijstlanden:
 		flagcolor = FlagColor(landen)
 		result = Country(landen, flagcolor)
+		countrylijst.append(result)
+
 		
 if __name__ == '__main__':
 	main()
