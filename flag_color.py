@@ -5,21 +5,24 @@
 
 from PyQt4 import QtCore, QtGui
 
-class FlagColor():
+class FlagColor(QtGui.QColor):
 	"""Class waarin de kleur wordt bepaald """
 	
-	def __init__(self):
+	def __init__(self, land):
 		""" Constructor """
-		super(QtGui.QColor, self).__init__()
+		super(FlagColor, self).__init__()
 		self.kleur()
 		
-	def kleur(self):
-		green = randrange(0,257)
-		red = randrange(0,257)
-		blue = randrange(0,257)
-		self.setGreen(green)
-		self.setRed(red)
-		self.setBlue(blue)
+	def initUI(self):
+		self.land = land
+		self.kleur = self.Kleur()
+		
+	def Kleur(self):
+		green = randrange(256)
+		red = randrange(256)
+		blue = randrange(256)
+		
+		return self
 
 
 def main():
