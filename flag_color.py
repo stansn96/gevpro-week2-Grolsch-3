@@ -4,6 +4,7 @@
 # flag_color.py
 
 from PyQt4 import QtCore, QtGui
+from random import randrange
 
 class FlagColor(QtGui.QColor):
 	"""Class waarin de kleur wordt bepaald """
@@ -17,9 +18,9 @@ class FlagColor(QtGui.QColor):
 		self.kleur = self.Kleur()
 		
 	def Kleur(self):
-		green = randrange(256)
-		red = randrange(256)
-		blue = randrange(256)
+		self.setGreen(randrange(256))
+		self.setRed(randrange(256))
+		self.setBlue(randrange(256))
 		
 		return self
 
