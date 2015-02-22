@@ -1,22 +1,26 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
+
+# Gerben Timmerman
+
 
 class Country():
-	
-	def __init__(self, land):
-		self.land = land
-		
+	def __init__(self,country):
+		self.country = country
+				
 	def __str__(self):
-		return("Hello from {}!".format(self.land))
+		countrynaam = ('Hello from {0}'.format(self.country))
+		return countrynaam
 		
+
+
 def main():
-	
-	i = Country("Rusland")
-	print(i)
-	p = Country("China")
-	print(p)
-	q = Country("Zuid-Korea")
-	print (q)
-	
+	lijstlanden = []
+	ob1, ob2 = "The Netherlands", "Germany"
+	lijstlanden.append(ob1)
+	lijstlanden.append(ob2)
+	for landen in lijstlanden:
+		groet = Country(landen)
+		print(groet)
+		
 if __name__ == '__main__':
 	main()
-		
