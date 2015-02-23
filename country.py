@@ -5,7 +5,7 @@
 from PyQt4 import QtCore, QtGui
 from flag_color import *
 
-class Country:
+class Country():
 	
 	def __init__(self, country, vlag):
 		self.country = country
