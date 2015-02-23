@@ -3,7 +3,8 @@
 # flag_ui.py
 # Gerben Timmerman & Stan Snijders
 
-from PyQt4 import QtCore, QtGui
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
 from country import *
 from flag_color import *
 import sys
@@ -16,8 +17,7 @@ class ColorFlag(QtGui.QWidget):
 		""" Constructor """
 		super(ColorFlag, self).__init__()
 		self.initUI()
-		self.countrylijst = getCountrylist()
-		
+	
 	def initUI(self):
 		""" User Interface """
 		
@@ -37,10 +37,12 @@ class ColorFlag(QtGui.QWidget):
 		# Landen Comboboxen tekenen in venster
 		self.comboboxland = QtGui.QComboBox(self)
 		self.comboboxland.setGeometry(55,30,250,40)
+		self.comboboxland.show()
 			
 		# Ieder land toevoegen aan combobox
-		for countries in self.countrylijst:
-			self.comboboxland.addItem(countries.landen)
+		countrylijst = getCountrylist()
+		for countries in countrylijst:
+			self.comboboxland.addItem(countries.country)
 		self.comboboxland.currentIndexChanged.connect(self.updateUI)
 		
 		# QFrame waar de kleur in staat
@@ -54,9 +56,10 @@ class ColorFlag(QtGui.QWidget):
 	def updateUI(self):
 		""" Kleur van flag aanpassen """
 		nieuwland = self.comboboxland.currentText()
-		for land in self.countrylijst:
-			if (land.country == newCountry):
-				self.frame.setStyleSheet("QFrame { background-color: %s }" % land.color.name())
+		countrylijst = getCountrylist()
+		for landen in countrylijst:
+			if (landen.country == nieuwland):
+				self.frame.setStyleSheet("QFrame { background-color: %s }" % vlag())
 		
 
 if __name__ == '__main__':

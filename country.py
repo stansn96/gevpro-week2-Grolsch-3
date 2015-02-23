@@ -7,17 +7,19 @@ from flag_color import *
 
 class Country():
 	
-	def __init__(self,country,vlag):
+	def __init__(self, country, vlag):
 		self.country = country
 				
 	def name(self):
-		countrynaam = self.country
+		return self.name
+
 		
-	def flagcolor(self):
-		self.vlag = vlag
+	def vlag(self):
+		return self.vlag
 		
 	def __str__(self):
 		return self
+
 		
 def getCountrylist():
 	
@@ -25,11 +27,11 @@ def getCountrylist():
 	bestand = open("countries_list.txt","r")
 	for line in bestand:
 		landen = line.strip()
-		flagcolor = FlagColor(landen)
-		result = Country(landen, flagcolor)
+		vlag = FlagColor(landen)
+		result = Country(landen, vlag)
 		countrylijst.append(result)
 	return countrylijst
 
 		
 if __name__ == '__main__':
-	main()
+	getCountrylist()
