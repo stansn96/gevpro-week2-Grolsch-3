@@ -9,11 +9,9 @@ class Country():
 	
 	def __init__(self,country,vlag):
 		self.country = country
-				
-	def name(self):
-		countrynaam = self.country
+		self.vlag = vlag
 		
-	def flagcolor(self):
+	def vlag(self):
 		self.vlag = vlag
 		
 	def __str__(self):
@@ -32,4 +30,4 @@ def getCountrylist():
 
 		
 if __name__ == '__main__':
-	main()
+	getCountrylist()
