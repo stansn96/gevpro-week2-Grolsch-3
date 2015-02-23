@@ -21,7 +21,7 @@ class ColorFlag(QtGui.QWidget):
 	def initUI(self):
 		""" User Interface """
 		
-		# Plaats en groote van venster
+		# Plaats en grootte van venster
 		self.setGeometry(300,300,600,150)
 		self.setWindowTitle('Vlag bepaler')
 		self.show()
@@ -59,7 +59,7 @@ class ColorFlag(QtGui.QWidget):
 		countrylijst = getCountrylist()
 		for landen in countrylijst:
 			if (landen.country == nieuwland):
-				self.frame.setStyleSheet("QFrame { background-color: %s }" % vlag())
+				self.frame.setStyleSheet("QFrame { background-color: %s }" % landen.vlag())
 		
 
 if __name__ == '__main__':
