@@ -9,7 +9,6 @@
 # een werkend programma afgeleverd die als je een land kiest, 3 random kleuren bij dat
 # land laat zien voor de vlag. !!!!
 
-
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from country import *
@@ -40,7 +39,7 @@ class ColorFlag(QtGui.QWidget):
 		self.comboboxland = QtGui.QComboBox(self)
 		self.comboboxland.setGeometry(55,30,250,40)
 		self.comboboxland.show()
-		
+
 		# Ieder land toevoegen aan combobox
 		countrylijst = getCountrylist()
 		for countries in countrylijst:
@@ -49,19 +48,19 @@ class ColorFlag(QtGui.QWidget):
 		
 		# QFrames waar de kleuren in staan
 		self.frame = QtGui.QFrame(self)
-		self.frame.setGeometry(85,80,250,30)
+		self.frame.setGeometry(85,80,200,30)
 		self.kleurobject1 = QtGui.QColor(randrange(256),randrange(256),randrange(256))
 		self.frame.setStyleSheet("QFrame {background-color: %s}" % self.kleurobject1.name())
 		self.frame.show()
 		
 		self.frame2 = QtGui.QFrame(self)
-		self.frame2.setGeometry(85,110,250,30)
+		self.frame2.setGeometry(85,110,200,30)
 		self.kleurobject2 = QtGui.QColor(randrange(256),randrange(256),randrange(256))
 		self.frame2.setStyleSheet("QFrame {background-color: %s}" % self.kleurobject2.name())
 		self.frame2.show()
 		
 		self.frame3 = QtGui.QFrame(self)
-		self.frame3.setGeometry(85,140,250,30)
+		self.frame3.setGeometry(85,140,200,30)
 		self.kleurobject3 = QtGui.QColor(randrange(256),randrange(256),randrange(256))
 		self.frame3.setStyleSheet("QFrame {background-color: %s}" % self.kleurobject3.name())
 		self.frame3.show()
@@ -77,6 +76,7 @@ class ColorFlag(QtGui.QWidget):
 		self.frame.setStyleSheet("QFrame { background-color: %s }" % self.kleurobject1.name())
 		self.frame2.setStyleSheet("QFrame { background-color: %s }" % self.kleurobject2.name())
 		self.frame3.setStyleSheet("QFrame { background-color: %s }" % self.kleurobject3.name())
+
 		
 		# We wilden ervoor zorgen dat hij de waarde bij iederland vast hield maar dat is ons niet gelukt
 		"""for landen in countrylijst:
